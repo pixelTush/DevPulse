@@ -1,32 +1,58 @@
-# React + TypeScript + Vite
+# DevPulse 📈
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+DevPulse is a modern, high-performance analytics dashboard designed to visualize real-time GitHub repository metadata and contributor activity. Built with React, TypeScript, and Vite, it leverages the GitHub REST API to provide deep insights into repository health, commit velocity, and language distribution.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 🔍 **Repo Search**: Enter any public GitHub repository (e.g. `facebook/react`) to analyze it instantly.
+- 📈 **Commit Velocity**: Interactive line charts showing commit frequency over time.
+- 🔥 **File Hotspots**: Bar charts displaying the most frequently modified files to help identify complex modules or tech debt.
+- 👥 **Contributor Churn**: Leaderboards breaking down the top contributors by total commits, additions, and deletions.
+- 🏷️ **Language Breakdown**: Donut charts visualizing the repository's primary programming languages.
+- 🔒 **Rate-Limit Bypass**: Built-in support for Personal Access Tokens (PAT) to bypass the unauthenticated 60 requests/hr limit and unlock up to 5,000 requests/hr.
+- 🎨 **Glassmorphism UI**: A sleek, fully responsive dark-mode interface built with native CSS variables.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend Framework**: React 18
+- **Build Tool**: Vite
+- **Language**: TypeScript
+- **Data Visualization**: Recharts
+- **Styling**: Vanilla CSS (CSS3 Variables, Glassmorphism)
+- **Data Source**: GitHub REST API
 
-## Expanding the Oxlint configuration
+## Getting Started
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+### Installation
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/pixelTush/DevPulse.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd DevPulse
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open your browser and visit `http://localhost:5174` (or the port specified in your terminal).
+
+## How to use a Personal Access Token (PAT)
+
+To avoid GitHub's strict rate limits for unauthenticated API requests:
+1. Go to your GitHub account Settings > Developer settings > Personal access tokens > Tokens (classic).
+2. Generate a new token (no specific scopes are required for public repositories).
+3. Paste the token into the top-right input field in the DevPulse dashboard.
+
+## License
+MIT
